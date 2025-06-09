@@ -1,0 +1,56 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <title>John & Anya Love Counter</title>
+  <style>
+    body {
+      font-family: Arial, sans-serif;
+      text-align: center;
+      padding: 50px;
+    }
+
+    #secret-section {
+      display: none;
+      margin-top: 20px;
+    }
+
+    button {
+      margin: 10px;
+      padding: 10px 20px;
+      font-size: 1em;
+      cursor: pointer;
+    }
+  </style>
+</head>
+<body>
+  <h1>John & Anya 💕</h1>
+  <p>Love Counter</p>
+
+  <input type="password" id="password" placeholder="..." />
+  <button onclick="checkPassword()">Enter</button>
+  <p id="error" style="color: red;"></p>
+
+  <div id="secret-section">
+    <h2>Where do you want to go? ✨</h2>
+    <button onclick="goTo('first-date.html')">Take me to our First Date 💘</button>
+    <button onclick="goTo('anniversary.html')">Show me our Anniversary 💍</button>
+  </div>
+
+  <script>
+    function checkPassword() {
+      const pw = document.getElementById("password").value;
+      if (pw === "Dec10") {
+        document.getElementById("secret-section").style.display = "block";
+        document.getElementById("error").innerText = "";
+      } else {
+        document.getElementById("error").innerText = "Nope, try again ❤️";
+        document.getElementById("secret-section").style.display = "none";
+      }
+    }
+
+    function goTo(page) {
+      window.location.href = page;
+    }
+  </script>
+</body>
+</html>
